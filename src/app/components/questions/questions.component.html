@@ -1,0 +1,27 @@
+<div class="px-4 md:px-20 lg:px-56 py-4 md:py-18 bg-black mx-auto text-white">
+  <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-10">Preguntas frecuentes</h1>
+  <div class="space-y-5">
+    <div *ngFor="let item of faqItems" class="space-y-2">
+      <button
+        class="flex justify-between items-center w-full text-lg md:text-xl lg:text-2xl bg-gray-700 p-4 md:p-5 hover:bg-gray-500 transition duration-500"
+        (click)="toggleDescription(item)">
+        <span>{{ item.question }}</span>
+        <span>
+          <i *ngIf="!item.showDescription" class="fas fa-plus"></i>
+          <i *ngIf="item.showDescription" class="fas fa-times"></i>
+        </span>
+      </button>
+      <div *ngIf="item.showDescription" class="text-gray-300 p-4 bg-gray-800 rounded transition duration-500">
+        {{ item.description }}
+      </div>
+    </div>
+  </div>
+
+  <div class="space-y-5 mt-10">
+    <p class="text-center text-lg md:text-xl lg:text-2xl">¿Quieres ver algo ya? Escribe tu dirección de correo para crear una suscripción a Netflix o reactivarla.</p>
+    <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+      <input type="text" placeholder="Dirección de correo" class="w-full md:w-auto px-4 py-2 bg-gray-800 text-white border-white placeholder-white rounded">
+      <button class="px-4 py-2 rounded bg-red-600 text-white cursor-pointer border-none hover:bg-red-700 transition duration-500">Empezar</button>
+    </div>
+  </div>
+</div>

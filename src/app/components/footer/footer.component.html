@@ -1,0 +1,9 @@
+<div class="px-4 md:px-20 lg:px-56 py-24 md:py-40 text-gray-400 bg-black">
+  <p class="mb-5">¿Preguntas? Llama al <span class="underline">900-759-106</span></p>
+  <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+    <div *ngFor="let item of footerItems">
+      <p class="underline">{{ item.name }}</p>
+    </div>
+  </div>
+  <p class="mt-5">Netflix España</p>
+</div>

@@ -1,7 +1,31 @@
 .background-image {
-  background: url(../../../../public/background.jpg) no-repeat center center/cover rgb(0 0 0 / 40%);
+  position: relative;
+  background: url(../../../../public/background.jpg) no-repeat center center/cover;
+  color: white;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0, 0.4); // Fondo negro con opacidad del 40%
+    z-index: 1;
+  }
+
+  > * {
+    position: relative;
+    z-index: 2;
+  }
 }
 
 .container2 {
-  background: radial-gradient(51.39% 511.66% at 47.68% -217.91%, #ff9900 0%, #e50914 17.27%, #0e1b4f 79.44%, #000413 100%)
+  background: radial-gradient(
+    51.39% 511.66% at 47.68% -217.91%,
+    #ff9900 0%,
+    #e50914 17.27%,
+    #0e1b4f 79.44%,
+    #000413 100%
+  );
 }
